@@ -1,0 +1,114 @@
+.dark-theme header.main-header {
+    background-color: black;
+}
+
+.light-theme header.main-header {
+    background-color: white;
+}
+
+header.main-header {
+    padding: 20px 0;
+}
+
+header.main-header .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.main-header .header-inner .menu-items {
+    display: flex;
+    gap: 30px;
+}
+
+.dark-theme header.main-header .header-inner {
+    color: white;
+}
+
+.light-theme header.main-header .header-inner {
+    color: black;
+}
+
+header.main-header .header-inner .menu-items a {
+    font-size: 14px;
+    color: white;
+}
+
+.light-theme header.main-header .header-inner .menu-items a {
+    color: black;
+}
+
+.dark-theme header.main-header .header-inner .menu-items a {
+    color: white;
+}
+
+
+.toggler {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.toggler span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: relative;
+}
+
+.toggler span::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+.toggler span::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+}
+
+
+.dark-theme .toggler span{
+    background-color: white;
+}
+
+.light-theme .toggler span{
+    background-color: black;
+}
+.light-theme .toggler span::before, .light-theme .toggler span::after{
+    background-color: black;
+}
+
+
+@media(min-width:991px) {
+    .toggler {
+        display: none;
+    }
+}
+
+@media(max-width:991px) {
+    header.main-header .header-inner .menu-items {
+        position: fixed;
+        background: #f00;
+        left: 0;
+        top: 0;
+        padding: 20px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: .2s ease;
+    }
+    header.main-header .header-inner .menu-items.active{
+        transform: translateX(0);
+        transition: .2s ease;
+    }
+}
